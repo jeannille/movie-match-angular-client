@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+
+<h1 class="wdbv-searchDetails-header"> Movie Details </h1>
+
+<div class="row container-fluid wbdv_searchDetails_container">
+
+  <!-- ** Movie Details from OMDB ** -->
+  <div class="row wdbv-searchByID-row">
+    <div class="col-lg">
+      <div class="wbdv_home_cardDeck">
+        <div class="card text-center" style="width: 20rem;">
+          <img class="card-img-top" src="{{movie.Poster}}" alt="Card image cap">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title "> {{movie.Title}}   </h5>
+            <p class="card-text">   {{movie.Year}} </p>
+            <button href="#" class="align-self-end btn btn-danger btn-block" (click)="Add()"> Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg">
+    <h1> {{movie.Title}} </h1>
+    <b> Plot : </b> {{movie.Plot}} <br/>
+    <b> Rated : </b> {{movie.Rated}} <br/>
+    <b> Awards : </b> {{movie.Awards}} <br/>
+    <b> Released : </b> {{movie.Released}} <br/>
+    <b> Runtime : </b> {{movie.Runtime}} <br/>
+    <b> Genre : </b> {{movie.Genre}} <br/>
+    <b> Director : </b> {{movie.Director}} <br/>
+    <b> Writer : </b> {{movie.Writer}} <br/>
+    <b> Actors : </b> {{movie.Actors}} <br/>
+    <b> Production : </b> {{movie.Production}} <br/>
+    <b> imdbRating : </b> {{movie.imdbRating}} <br/>
+    <b> imdbVotes : </b> {{movie.imdbVotes}} <br/>
+    <b> imdbId : </b> {{movie.imdbID}} <br/>
+  </div>
+
+  <!-- ** Movie Details from our database ** -->
+  <div class="col-lg">
+    <h3> Related Details from MovieMatch </h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b> Number of Times this Movie has been Added to a MovieList: </b>
+      </li>
+      <li class="list-group-item">
+         {{movieMatchDetails.usersThatAddedMovie.length}}
+      </li>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b> Users that Recently Added This Movie : </b>
+      </li>
+      <li class="list-group-item" *ngFor="let user of userProfiles">
+        <a href="/profile/{{user._id}}">
+          {{user.username}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+

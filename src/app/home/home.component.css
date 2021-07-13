@@ -1,0 +1,45 @@
+.wbdv-home-jumbotron-btn{
+  width:200px;
+  margin-left: 5px;
+}
+
+.wbdv_home_cardDeck{
+  margin : 18px;
+}
+
+.wbdv_home_jumotron{
+  margin-top:30px;
+}
+
+.wbdv_home_jumotron_heading{
+  font-weight: 200;
+}
+
+
+.wbdv-search-card-img-top {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.wdbv-searchByID-row {
+  margin-top : 20px;
+  padding-left: 46px;
+}
+
+.wbdv-search-card{
+  /*margin:15px;*/
+  float: none;
+  margin: 0 auto 15px;
+}
+
+.wbdv_deleteBtn{
+  margin-top:5px;
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}

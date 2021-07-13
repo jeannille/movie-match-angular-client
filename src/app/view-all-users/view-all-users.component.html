@@ -1,0 +1,50 @@
+<app-nav-bar></app-nav-bar>
+
+<div>
+  <br>
+  <!--  Hide Users table of user role is not Admin -->
+  <div class="container table-responsive">
+    <h2 id="user-admin-header" >User Administrator View</h2>
+    <i class="fa fas-user"></i>
+    <table class="  table table-bordered" [hidden]="user.role !== 'Admin'">
+      <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+      </tr>
+      </thead>
+
+      <tbody *ngFor="let user of users">
+      <td>
+        {{user.username}}
+      </td>
+
+      <td>
+        {{user.password}}
+      </td>
+      <td>
+        {{user.email}}
+      </td>
+
+      <td>
+        {{user.firstName}}
+      </td>
+      <td>
+        {{user.lastName}}
+      </td>
+      <td>
+        {{user.role}}
+      </td>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+</div>

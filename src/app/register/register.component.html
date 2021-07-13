@@ -1,0 +1,60 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container wbdv_register_page">
+
+  <h2>Register</h2>
+
+  <!-- [(ngModel)] -- Bind the var 'username' to input -->
+  <input placeholder="username"
+         [(ngModel)]="username"
+         class="form-control"/>
+  <br/>
+  <input placeholder="Email Address"
+         type="email"
+         [(ngModel)]="email"
+         class="form-control"/>
+  <br/>
+  <input placeholder="password"
+         type="password"
+         [(ngModel)]="password"
+         class="form-control"/>
+  <br/>
+  <input placeholder="verify password"
+         type="password"
+         [(ngModel)]="verifyPassword"
+         class="form-control"/>
+  <br/>
+  <input placeholder="First Name"
+         type = "text"
+         [(ngModel)]="firstName"
+         class="form-control"/>
+  <br/>
+  <input placeholder="Last Name"
+         type = "text"
+         [(ngModel)]="lastName"
+         class="form-control"/>
+  <br/>
+
+  <ul class = "list-group list-group-flush">
+    <br>
+    <h5>Selected User Role: </h5>
+    <li class="list-group-item float-left" *ngFor="let role of roles" id="user-register-role">
+      <label for="{{role}}"> {{role}} &nbsp;  </label>
+      <input
+        id="{{role}}"
+        type = "radio"
+        [(ngModel)]="selectedRole"
+        value={{role}}
+      />
+    </li>
+    <br/>
+  </ul>
+  <br/>
+
+  <button
+    (click)="register(username, password, role, firstName, lastName, email)"
+    class="btn btn-primary btn-block">
+    Register
+  </button>
+
+</div>

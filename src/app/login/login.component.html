@@ -1,0 +1,21 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container wbdv_login_page">
+  <h2>Login</h2>
+
+  <input placeholder="username"
+         [(ngModel)]="username"
+         class="form-control"/>
+  <br/>
+  <input placeholder="password"
+         type="password"
+         [(ngModel)]="password"
+         class="form-control"/>
+  <br/>
+  <br/>
+  <button
+    (click)="login(username, password)"
+    class="btn btn-primary btn-block">
+    Login
+  </button>
+</div>

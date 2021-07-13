@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div class="container-fluid wdbv-movieList-container">
+  <h1> {{user.username}}'s MovieList </h1>
+  <p class="lead text-muted"> All your favorite movies.  </p>
+  <div class="row wdbv-searchByID-row">
+    <div *ngFor="let m of movieObjectsList">
+      <div class="wbdv_home_cardDeck col-auto mb-3">
+        <div class="card wbdv-search-card text-center" style="width: 16rem;" >
+          <img class="card-img-top wbdv-search-card-img-top" src="{{m.Poster}}" alt="Card image cap">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"> {{m.Title}}   </h5>
+            <p class="card-text">   {{m.Year}} | {{m.Type}} </p>
+            <a href="/details/{{m.imdbID}}" class="btn btn-primary btn-block"> Details </a>
+            <button class="btn btn-danger wbdv_deleteBtn"
+                    (click)="deleteFromMovieList(m.imdbID)"> Delete </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

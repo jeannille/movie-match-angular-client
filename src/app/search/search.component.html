@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+
+    <div class="container wbdv_search_jumbotron">
+      <div class="jumbotron">
+        <h3 class="text-center">Search For a Movie :  </h3>
+        <input placeholder="Search for a Movie Title"
+               [(ngModel)]="searchText"
+               class="form-control"/>
+        <a href="/search/{{searchText}}" class="btn btn-primary btn-block wbdv_search_jumbotronBtn"> Search </a>
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row wdbv-searchByID-row">
+      <div *ngFor="let movie of moviesSearchResult.Search">
+        <div class="wbdv_home_cardDeck col-4">
+          <div class="card wbdv-search-card text-center" style="width: 20rem;">
+            <img class="card-img-top wbdv-search-card-img-top" src="{{movie.Poster}}" alt="Card image cap">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"> {{movie.Title}}   </h5>
+              <p class="card-text">   {{movie.Year}} | {{movie.Type}} </p>
+              <a href="/details/{{movie.imdbID}}" class="btn btn-primary btn-block"> Details </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
